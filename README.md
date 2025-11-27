@@ -1,16 +1,16 @@
 # GeoStat
 
-# Statistical Geomodeling 2026 - Course Repository
+# Statistical and Geospatial modeling 2026 - Course Repository
 
 ## Overview
 This repository contains all coursework, assignments, and project materials 
-for the Statistical Geomodeling course (2026). 
+for the course Statistical and Geospatial modeling (2026). 
 
 ## Course Information
 
 - **Course**: Statistical Geomodeling
 - **Institution**: Aarhus University, Department of Biology
-- **Instructor**: [Instructor Name]
+- **Instructor**: Alejandro Ordonez Gloria
 - **Academic Period**: Spring 2026
 
 ## Repository Structure
@@ -20,17 +20,25 @@ as outlined on Brightspace:
 
 ### Completed Weeks
 
-- `Week_01_Introduction_to_Spatial_Data/` - Introduction to spatial data analysis
-- `Week_02_Coordinate_Systems/` - Working with coordinate reference systems
-
-*Additional weeks will be added as the course progresses*
+- Week_01_Probability_and_Hypothesis_Testing
+- Week_02_Linear_Regression
+- Week_03_Generalized_Linear_Models
+- Week_04_Generalized_Additive_Models
+- Week_05_Mixed-Effect_Models
+- Week_06_Classification_and_Regression_Trees
+- Week_07_Multivariate_Statistics
+- Week_08_R_and_GIS
+- Week_09_Temporal_and_Spatial_Correlation_Structure
+- Week_10_Spatial_Interpolation
+- Week_11_Remote_Sensing_in_Ecology
+- Week_12_LIDAR
 
 ### Folder Organization
 
 Each week's folder contains:
 - `DATA/` - Data files used for that week's exercises
-- `.qmd` files - Quarto documents with code and analysis
-- `.html` files - Rendered HTML outputs of the Quarto documents
+- `.Rmd` files - R markdown documents with code and analysis
+- `.html` files - Rendered HTML outputs of the R markdown documents
 
 ## Data Sources
 
@@ -55,10 +63,18 @@ Clone this repository to work locally with RStudio:
 5. Click "Create Project"
 
 ## Progress Tracker
-- [x] Week 1: Introduction to Spatial Data
-- [x] Week 2: Coordinate Systems
-- [ ] Week 3: Spatial Data Manipulation
-- [ ] Week 4: Geostatistical Analysis
+- [x] Week_01_Probability_and_Hypothesis_Testing
+- [x] Week_02_Linear_Regression
+- [x] Week_03_Generalized_Linear_Models
+- [x] Week_04_Generalized_Additive_Models
+- [x] Week_05_Mixed-Effect_Models
+- [x] Week_06_Classification_and_Regression_Trees
+- [x] Week_07_Multivariate_Statistics
+- [x] Week_08_R_and_GIS
+- [x] Week_09_Temporal_and_Spatial_Correlation_Structure
+- [x] Week_10_Spatial_Interpolation
+- [x] Week_11_Remote_Sensing_in_Ecology
+- [x] Week_12_LIDAR
 
 ## License
 
