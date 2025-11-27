@@ -1,0 +1,183 @@
+---
+title: "Week1, Practical"
+author: "René Gier Vemmelund"
+date: "`r Sys.Date()`"
+bibliography: "TestBibTex.bib"
+output:
+  bookdown::html_document2:
+    toc: true
+    toc_depth: 3
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r libraries, include=FALSE}
+
+#install.packages(c("dplyr","ggplot2","knitr"))
+
+library(dplyr)
+library(ggplot2)
+library(knitr)
+```
+
+# Why use `R` in Ecology
+
+::: {.alert .alert-info}
+## Abstract
+
+The programming language R is widely used in many fields. We explored the extent of reported R use in the field of ecology using the Web of Science and text mining. We analyzed the frequencies of R packages reported in more than 60,000 peer-reviewed articles published in 30 ecology journals during a 10-yr period ending in 2017. The number of studies reported using R as their primary tool in data analysis increased linearly from 11.4% in 2008 to 58.0% in 2017. The top 10 packages reported were `lme4`, `vegan`, `nlme`, `ape`, `MuMIn`, `MASS`, `mgcv`, `ade4`, `multcomp`, and `car`. The increasing popularity of R has most likely furthered open science in ecological research because it can improve reproducibility of analyses and captures workflows when scripts and codes are included and shared. These findings may not be entirely unique to R because there are other programming languages used by ecologists, but they do strongly suggest that given the relatively high frequency of reported use of R, it is a significant component of contemporary analytics in the field of ecology.
+:::
+
+## Analysis 1
+
+### Load data
+
+```{r Load data}
+Articles_Use <- read.csv("./Data/Articles_Use.csv")
+head(Articles_Use) # Check if the import OK
+str(Articles_Use) #Check variables and their types
+```
+
+### Total number, mean, min and max of articles evaluated
+
+```{r Explore data}
+total_articles <- sum(Articles_Use$Total_Number_Articles, na.rm = TRUE)
+mean_articles <- mean(Articles_Use$Total_Number_Articles, na.rm = TRUE)
+min_articles <- min(Articles_Use$Total_Number_Articles, na.rm = TRUE)
+max_articles <- max(Articles_Use$Total_Number_Articles, na.rm = TRUE)
+
+total_articles
+
+paste0("average (mean) = ", mean_articles,
+      " minimum (min) = ", min_articles,
+      " maximum (max) = ", max_articles,
+      " number of articles")
+```
+
+### Find the journal with highest number of articles
+
+```{r}
+Top_journal <- Articles_Use$Journal[(Articles_Use$Total_Number_Articles == max(Articles_Use$Total_Number_Articles, na.rm = TRUE))]
+
+Top_journal
+```
+
+### Sort the journals with increasing number of articles
+
+```{r Journal-ranking, tab.cap="Journal ranking"}
+journal_ranking <- Articles_Use[order(Articles_Use$Total_Number_Articles),c("Journal", "Total_Number_Articles")]
+
+knitr::kable(journal_ranking, caption = "Increasing number of articles")
+```
+
+**Summary**
+
+`r total_articles`
+
+## Analysis 2
+
+### Load data
+
+```{r}
+MeanPercent2008_2017 <- read.csv("./Data/MeanPercent2008_2017.csv")
+head(MeanPercent2008_2017) # Check if the import OK
+str(MeanPercent2008_2017) #Check variables and their types
+```
+
+### Correlations
+
+```{r}
+   correlation_result <- cor.test(MeanPercent2008_2017$Year, # Var_1
+                                  MeanPercent2008_2017$Articles.Using.R) # Var_2
+```
+
+### Models and figures
+
+```{r fig-lmModel, fig.cap= "Figure"}
+   Model.1 <- lm(Articles.Using.R ~ Year, # The regression 
+                 data = MeanPercent2008_2017) # The data
+
+   annual_rate_increase <- coef(Model.1)[2] # Extract the annual rate of increase 
+   annual_rate_increase
+   
+      plot(Articles.Using.R ~ Year, data = MeanPercent2008_2017)
+   abline(Model.1,  # The linear model object
+          col = "red",  # The color of the line
+          lty = 2     # A dashed line type
+   )
+```
+
+**Summary**
+
+`r total_articles`
+
+referencing a table: Table \@ref(tab:Journal-ranking)
+
+referencing a figure: Figure \@ref(fig:fig-lmModel)
+
+## Popular packages
+
+```{r Cit-plot, fig.cap="The citations of the most populat R packages"}
+# Here the caption has to be part of the R chunk header fig.cap = "caption"
+knitr::include_graphics("./Data/PopularPackages.png") 
+```
+
+### Add Sections and Format the Text
+
+**Task 2:**
+
+TEXT HERE
+
+```{r}
+# CODE HERE
+```
+
+## Analysis
+
+### Analysis section - Load and expore the data.
+
+**Task 3:**
+
+TEXT HERE
+
+```{r}
+# CODE HERE
+```
+
+### Analysis section - Your First Analysis
+
+**Task 4**:
+
+TEXT HERE
+
+```{r}
+# CODE HERE
+```
+
+### Analysis section - Add a Figure from an Image File
+
+**Task 5**:
+
+TEXT HERE
+
+```{r}
+# CODE HERE
+```
+
+### Analysis section - Create a Table
+
+**Task 6**:
+
+TEXT HERE
+
+```{r}
+# CODE HERE
+```
+
+| **Package Short Name** | **Package Long Name** | **Package Citation** |
+|------------------|------------------|-------------------------------------|
+| `base` | R: A Language and Environment for Statistical Computing | "@BaseR" |
+| `lai2019` | Evaluating the popularity of R in ecology | "@lai2019evaluating" |
+
