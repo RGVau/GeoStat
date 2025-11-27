@@ -56,11 +56,11 @@ The first task involves converting the long-format `BiomeData.csv` (containing s
 
 # Read biome dataset
 # HINT: stringsAsFactors keeps text as characters, [,-1] removes first column
-biome <- read.csv("BiomeData.csv", 
+biome <- read.csv("DATA/BiomeData.csv", 
                   stringsAsFactors = FALSE)[,-1]  # Remove column 1
 
 # Read climate dataset
-clim  <- read.csv("ClimateData.csv", 
+clim  <- read.csv("DATA/ClimateData.csv", 
                   stringsAsFactors = FALSE)[,-1]
 
 # ============================================================================

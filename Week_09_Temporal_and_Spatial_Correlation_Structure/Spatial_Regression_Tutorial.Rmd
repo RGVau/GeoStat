@@ -95,7 +95,7 @@ library(caret)     # For k-fold validation
 
 ```{r load-data}
 # Load the sPlot data
-sPlot.Data <- read.csv("Splot_SppRichness.csv")
+sPlot.Data <- read.csv("DATA/Splot_SppRichness.csv")
 
 # Explore data structure
 str(sPlot.Data)

@@ -121,7 +121,7 @@ The `readLAS()` function loads LiDAR data into R as a LAS object.
 
 ```{r load_data}
 # Load the LiDAR data
-Unipark <- readLAS("PUNKTSKY_1km_6225_574_unipark.laz")
+Unipark <- readLAS("DATA/PUNKTSKY_1km_6225_574_unipark.laz")
 ```
 
 ## Understanding LAS Object Structure

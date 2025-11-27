@@ -20,7 +20,7 @@ library(dplyr)
 library(broom)
 library(GGally)   # for ggpairs (ggplot2-based pairplot)
 # Let's read the data right way 
-Nereis <- read_table("Nereis.txt")
+Nereis <- read_table("DATA/Nereis.txt")
 ```
 
 
@@ -69,7 +69,7 @@ The experimental question was whether nutrient concentrations could be explained
 
 ```{r}
 ## Load the Dataset Read the data using the correct delimiter (here, tab-delimited): 
-Nereis <- read_delim("Nereis.txt",
+Nereis <- read_delim("DATA/Nereis.txt",
                           delim = "\t",
                           col_names = TRUE,
                           na = c("", "NA")

@@ -33,7 +33,7 @@ library(broom)
 library(patchwork)
 
 # Data: ISIT 
-ISIT <-  read_table("ISIT.txt")
+ISIT <-  read_table("DATA/ISIT.txt")
 
 # For reproducibility
 set.seed(123)

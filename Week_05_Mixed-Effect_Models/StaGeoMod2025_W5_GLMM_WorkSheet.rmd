@@ -36,7 +36,7 @@ set.seed(123)
 
 ```{r A1-LoadData}
 # Load the data file - fill in the correct function name
-owls <- read.table(file = "Owls.txt", header = TRUE)
+owls <- read.table(file = "DATA/Owls.txt", header = TRUE)
 
 # Convert categorical variables to factors (R's way of handling categories)
 owls <- owls %>%

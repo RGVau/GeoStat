@@ -106,8 +106,8 @@ We need to combine our ecological classification data with environmental predict
 
 ```{r Load data}
 # Load the data
-biome_data <- read.csv("BiomeData.csv", row.names = 1)
-clim_data <- read.csv("ClimateData.csv", row.names = 1)
+biome_data <- read.csv("DATA/BiomeData.csv", row.names = 1)
+clim_data <- read.csv("DATA/ClimateData.csv", row.names = 1)
 
 # Merge datasets by ID
 data_merged <- merge(biome_data, clim_data, by = "ID")

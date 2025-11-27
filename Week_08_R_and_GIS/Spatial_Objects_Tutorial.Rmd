@@ -250,7 +250,7 @@ Let's load climate data (WorldClim bioclimatic variables) to understand Bigfoot'
 
 ```{r load-raster}
 # Load WorldClim bioclimatic variables
-WC.Bioclim <- rast(x = "wc2.1_10m_bio_1.tif")
+WC.Bioclim <- rast(x = "DATA/wc2.1_10m_bio_1.tif")
 
 # Check the raster properties
 describe(WC.Bioclim)
@@ -295,7 +295,7 @@ Now let's reproject our raster to Albers Equal Area.
 NoAm.WC.Bioclim.AEA <- terra::project(
   x = NoAm.WC.Bioclim,
   y = AEA.proj,
-  filename = "NoAm_Bioclim_AEA.tif",  # write to disk to not overload memory
+  filename = "DATA/NoAm_Bioclim_AEA.tif",  # write to disk to not overload memory
   overwrite = TRUE
 )
 

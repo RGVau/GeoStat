@@ -35,7 +35,7 @@ The programming language R is widely used in many fields. We explored the extent
 ### Load data
 
 ```{r Load data}
-Articles_Use <- read.csv("./Data/Articles_Use.csv")
+Articles_Use <- read.csv("./DATA/Articles_Use.csv")
 head(Articles_Use) # Check if the import OK
 str(Articles_Use) #Check variables and their types
 ```
@@ -81,7 +81,7 @@ knitr::kable(journal_ranking, caption = "Increasing number of articles")
 ### Load data
 
 ```{r}
-MeanPercent2008_2017 <- read.csv("./Data/MeanPercent2008_2017.csv")
+MeanPercent2008_2017 <- read.csv("./DATA/MeanPercent2008_2017.csv")
 head(MeanPercent2008_2017) # Check if the import OK
 str(MeanPercent2008_2017) #Check variables and their types
 ```
@@ -121,7 +121,7 @@ referencing a figure: Figure \@ref(fig:fig-lmModel)
 
 ```{r Cit-plot, fig.cap="The citations of the most populat R packages"}
 # Here the caption has to be part of the R chunk header fig.cap = "caption"
-knitr::include_graphics("./Data/PopularPackages.png") 
+knitr::include_graphics("./DATA/PopularPackages.png") 
 ```
 
 ### Add Sections and Format the Text

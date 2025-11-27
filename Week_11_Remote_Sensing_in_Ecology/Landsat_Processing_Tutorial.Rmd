@@ -103,13 +103,13 @@ Landsat 8 visible light bands:
 
 ```{r load_bands}
 # Load the Blue Band (Band 2)
-blue <- raster("Data/LC08_L1TP_196021_20190629_20200827_02_T1_B2.TIF")
+blue <- raster("DATA/LC08_L1TP_196021_20190629_20200827_02_T1_B2.TIF")
 
 # Load the Green Band (Band 3)
-green <- raster("Data/LC08_L1TP_196021_20190629_20200827_02_T1_B3.TIF")
+green <- raster("DATA/LC08_L1TP_196021_20190629_20200827_02_T1_B3.TIF")
 
 # Load the Red Band (Band 4)
-red <- raster("Data/LC08_L1TP_196021_20190629_20200827_02_T1_B4.TIF")
+red <- raster("DATA/LC08_L1TP_196021_20190629_20200827_02_T1_B4.TIF")
 
 print(red)
 ```
@@ -385,7 +385,7 @@ our human perception.
 
 ```{r natural_color}
 # Load the Natural Color Image (all bands in one file)
-rgb.Nat.Color <- brick("Data/LC08_L1TP_196021_20190629_20200827_02_T1_refl.TIF")
+rgb.Nat.Color <- brick("DATA/LC08_L1TP_196021_20190629_20200827_02_T1_refl.TIF")
 
 # Crop to Aarhus region
 rgb.Nat.Color <- crop(
@@ -429,7 +429,7 @@ Landsat bands and common false-color composites
 
 ```{r color_infrared}
 # Load and crop near-infrared band
-nir <- raster("Data/LC08_L1TP_196021_20190629_20200827_02_T1_B5.TIF")
+nir <- raster("DATA/LC08_L1TP_196021_20190629_20200827_02_T1_B5.TIF")
 nir <- crop(x = nir, y = boundary)
 
 # Create Color Infrared stack
@@ -456,10 +456,10 @@ plotRGB(rgb.ColInf,
 
 ```{r shortwave_infrared}
 # Load and crop SWIR bands
-swir1 <- raster("Data/LC08_L1TP_196021_20190629_20200827_02_T1_B6.TIF")
+swir1 <- raster("DATA/LC08_L1TP_196021_20190629_20200827_02_T1_B6.TIF")
 swir1 <- crop(x = swir1, y = boundary)
 
-swir2 <- raster("Data/LC08_L1TP_196021_20190629_20200827_02_T1_B7.TIF")
+swir2 <- raster("DATA/LC08_L1TP_196021_20190629_20200827_02_T1_B7.TIF")
 swir2 <- crop(x = swir2, y = boundary)
 
 # Create SWIR stack
@@ -523,8 +523,8 @@ $$NDVI = \frac{NIR - Red}{NIR + Red}$$
 
 ```{r calculate_ndvi}
 # Load surface reflectance bands (Level 2)
-red_sr <- raster("Data/LC08_L2SP_196021_20190629_20200827_02_T1_SR_B4.TIF")
-nir_sr <- raster("Data/LC08_L2SP_196021_20190629_20200827_02_T1_SR_B5.TIF")
+red_sr <- raster("DATA/LC08_L2SP_196021_20190629_20200827_02_T1_SR_B4.TIF")
+nir_sr <- raster("DATA/LC08_L2SP_196021_20190629_20200827_02_T1_SR_B5.TIF")
 
 # Crop to area of interest
 red_sr <- crop(x = red_sr, y = boundary)
@@ -571,8 +571,8 @@ do you expect to see?
 ```{r load_1989}
 # Load 1989 Landsat 5 bands (note different band numbers!)
 # Landsat 5: Band 3 = Red, Band 4 = NIR
-red_sr.1989 <- raster("Data/LT05_L2SP_196021_19890626_20200916_02_T1_SR_B3.TIF")
-nir_sr.1989 <- raster("Data/LT05_L2SP_196021_19890626_20200916_02_T1_SR_B4.TIF")
+red_sr.1989 <- raster("DATA/LT05_L2SP_196021_19890626_20200916_02_T1_SR_B3.TIF")
+nir_sr.1989 <- raster("DATA/LT05_L2SP_196021_19890626_20200916_02_T1_SR_B4.TIF")
 
 # Crop to boundary
 red_sr.1989 <- crop(red_sr.1989, boundary)
